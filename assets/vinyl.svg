@@ -1,0 +1,36 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Vinyl grooves reflections -->
+    <linearGradient id="vinyl-reflection" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#333" />
+      <stop offset="25%" stop-color="#111" />
+      <stop offset="50%" stop-color="#444" />
+      <stop offset="75%" stop-color="#111" />
+      <stop offset="100%" stop-color="#333" />
+    </linearGradient>
+  </defs>
+
+  <!-- Base vinyl record -->
+  <circle cx="50" cy="50" r="48" fill="url(#vinyl-reflection)"/>
+  
+  <!-- Grooves -->
+  <circle cx="50" cy="50" r="45" stroke="#222" stroke-width="0.5" fill="none"/>
+  <circle cx="50" cy="50" r="42" stroke="#2a2a2a" stroke-width="0.75" fill="none"/>
+  <circle cx="50" cy="50" r="38" stroke="#1a1a1a" stroke-width="1" fill="none"/>
+  <circle cx="50" cy="50" r="34" stroke="#2a2a2a" stroke-width="0.5" fill="none"/>
+  <circle cx="50" cy="50" r="30" stroke="#1f1f1f" stroke-width="1" fill="none"/>
+  <circle cx="50" cy="50" r="26" stroke="#2a2a2a" stroke-width="0.75" fill="none"/>
+  
+  <!-- Outer rim of label -->
+  <circle cx="50" cy="50" r="18" fill="#5C1620"/>
+  
+  <!-- Inner label area -->
+  <circle cx="50" cy="50" r="15" fill="#7A1F2B"/>
+  
+  <!-- Label decoration (gold lines) -->
+  <circle cx="50" cy="50" r="14" stroke="#C9A24B" stroke-width="0.5" fill="none"/>
+  <circle cx="50" cy="50" r="10" stroke="#C9A24B" stroke-width="0.25" fill="none"/>
+  
+  <!-- Center hole -->
+  <circle cx="50" cy="50" r="3" fill="#F5EFE6"/>
+</svg>
