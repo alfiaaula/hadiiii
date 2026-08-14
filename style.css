@@ -1682,3 +1682,59 @@ button {
     font-weight: bold;
     text-align: center;
 }
+
+/* Sizing Adjustments for Mobile / Responsive */
+@media (max-width: 768px) {
+    .presentation-slide {
+        flex-direction: column;
+        aspect-ratio: auto;
+        min-height: 85vh;
+        height: auto;
+        border-radius: 6vw;
+    }
+
+    .slide-left,
+    .slide-right {
+        width: 100%;
+        flex: 1;
+        padding: 6vw;
+    }
+
+    .doily-container {
+        width: 65%;
+        aspect-ratio: 3.5 / 4.5;
+        margin: 2vw auto;
+    }
+
+    .doily-text-1 {
+        font-size: 6cqw;
+    }
+
+    .doily-warning {
+        font-size: 5.5cqw !important;
+    }
+
+    .doily-list {
+        font-size: 4.5cqw;
+        margin-top: 2cqw !important;
+    }
+
+    .years-container {
+        column-gap: 5cqw;
+        row-gap: 3cqw;
+    }
+
+    .year-item {
+        font-size: 6cqw;
+        padding: 0.5cqw 1.5cqw;
+    }
+
+    .circle-svg {
+        width: 150%;
+        height: 190%;
+    }
+
+    .feat-title {
+        font-size: 1.1rem;
+    }
+}
