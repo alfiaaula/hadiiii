@@ -1,0 +1,315 @@
+/* sec-envelope redesign */
+#sec-envelope {
+    font-family: 'Montserrat', sans-serif;
+    color: #4A131A;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Text */
+.env-header-content {
+    position: absolute;
+    top: 5%;
+    width: 90%;
+    max-width: 600px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.env-spacing {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5em;
+    color: #8C1117;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+h5.env-spacing {
+    font-size: 1rem;
+}
+
+h4.env-spacing {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.env-subtext {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.env-highlight {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #A31018;
+}
+
+/* Huge Background Text */
+.huge-bg-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.huge-bg-row {
+    position: absolute;
+    white-space: nowrap;
+    line-height: 0.8;
+    color: #FDF6E3;
+    opacity: 0.16;
+}
+
+.huge-bg-row:not(.bottom-row) {
+    top: 6%;
+    left: -4%;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(4.5rem, 13vw, 10rem);
+    letter-spacing: -0.02em;
+}
+
+.huge-bg-row.bottom-row {
+    bottom: 4%;
+    right: -3%;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: clamp(6rem, 18vw, 13rem);
+    opacity: 0.2;
+}
+
+/* Envelope adjustments */
+.envelope-wrapper {
+    position: relative;
+    z-index: 5;
+    margin-top: 6vh;
+}
+
+.envelope.env-red {
+    background: #5C1920;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: rotate(-5deg);
+    transition: transform 0.4s ease;
+    width: 350px;
+    height: 230px;
+}
+
+.envelope.env-red:hover {
+    transform: rotate(-5deg) translateY(-5px);
+}
+
+.flap-red {
+    border-top-color: #6B1C24;
+    border-left-width: 175px;
+    border-right-width: 175px;
+    border-top-width: 130px;
+    filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.2));
+    transform: rotateX(180deg);
+    transform-origin: top;
+    z-index: 1;
+    /* Behind letter */
+}
+
+.pocket-red {
+    border-left-color: #4A0F16;
+    border-right-color: #4A0F16;
+    border-bottom-color: #5C1920;
+    border-left-width: 175px;
+    border-right-width: 175px;
+    border-bottom-width: 130px;
+    border-top-width: 100px;
+}
+
+/* Letter inside */
+.letter-preview-red {
+    background: #FFFFFF;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    top: 5px;
+    left: 10px;
+    right: 10px;
+    bottom: 5px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateY(-80px);
+    /* sticking out by default */
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+    /* In front of flap, behind pocket */
+}
+
+.envelope.env-red.open .letter-preview-red {
+    transform: translateY(-130px);
+    /* Goes even higher */
+}
+
+/* Letter Content */
+.letter-preview-content {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.preview-title {
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.val-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 800;
+    color: #5C1920;
+    font-size: 1.8rem;
+}
+
+.preview-p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.preview-p-small {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.preview-highlight {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #5C1920;
+}
+
+/* Wax Seal */
+.wax-seal-red {
+    background: radial-gradient(circle at 30% 30%, #6B1C24, #310C10);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 220, 200, 0.35);
+    width: 60px;
+    height: 60px;
+    top: 75%;
+    /* Shift to lower half on the pocket */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.envelope.env-red.open .wax-seal-red {
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Don't hide it, just bump it */
+}
+
+/* Strings */
+.env-string {
+    position: absolute;
+    height: 2px;
+    background-color: #E25D36;
+    z-index: 9;
+    /* behind wax seal */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s;
+}
+
+.string-left {
+    width: 250px;
+    top: 80%;
+    left: -120px;
+    transform: rotate(20deg);
+}
+
+.string-right {
+    width: 200px;
+    top: 70%;
+    right: -80px;
+    transform: rotate(-10deg);
+}
+
+.envelope.env-red.open .env-string {
+    opacity: 0;
+}
+
+/* Buttons */
+.env-btn-outline {
+    border: 2px solid #FDF6E3;
+    color: #FDF6E3;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.env-btn-outline:hover {
+    background: #FDF6E3;
+    color: #5C1920;
+}
+
+.env-btn-primary {
+    background: #FDF6E3;
+    color: #5C1920;
+    border: 2px solid #FDF6E3;
+}
+
+.env-btn-primary:hover {
+    background: #FFF2DD;
+    border-color: #FFF2DD;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .envelope.env-red {
+        width: 300px;
+        height: 200px;
+    }
+
+    .flap-red {
+        border-left-width: 150px;
+        border-right-width: 150px;
+        border-top-width: 110px;
+    }
+
+    .pocket-red {
+        border-left-width: 150px;
+        border-right-width: 150px;
+        border-bottom-width: 110px;
+        border-top-width: 90px;
+    }
+
+    .env-header-content {
+        top: 2%;
+    }
+
+    h4.env-spacing {
+        margin-bottom: 10px;
+    }
+
+    .env-subtext {
+        font-size: 0.75rem;
+    }
+
+    .envelope-wrapper {
+        margin-top: 20vh;
+    }
+
+    .string-left {
+        left: -50px;
+        width: 150px;
+    }
+
+    .string-right {
+        right: -30px;
+        width: 150px;
+    }
+}

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,400..900;1,400..900&family=Caveat:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="poster.css">
+    <link rel="stylesheet" href="envelope.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div id="app" class="app-container">
+        <!-- Background Pattern -->
+        <div class="plaid-bg"></div>
+
+        <!-- Section 1: Cover -->
+        <section id="sec-cover" class="section active flex-center" style="padding: 0;">
+            <div class="poster-container">
+                <!-- Frame -->
+                <div class="poster-frame">
+                    <div class="frame-corner top-left"></div>
+                    <div class="frame-corner top-right"></div>
+                    <div class="frame-corner bottom-left"></div>
+                    <div class="frame-corner bottom-right"></div>
+                </div>
+
+                <!-- Cupid Icon -->
+                <div class="poster-cupid">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 30 C30 20, 20 40, 40 50 C60 60, 80 40, 70 30 C60 20, 50 20, 40 30 Z"
+                            fill="#FDF6E3" />
+                        <circle cx="65" cy="20" r="8" fill="#FDF6E3" />
+                        <path d="M80 50 L90 20 L20 70 M85 35 L70 50" stroke="#FDF6E3" stroke-width="3"
+                            stroke-linecap="round" />
+                        <path d="M50 40 Q40 60 45 75 Q35 65 30 50 Z" fill="#FDF6E3" />
+                    </svg>
+                </div>
+
+                <!-- Logos -->
+                <div class="logo-enc">
+                    <h2 class="enc-title">EN<span>C</span></h2>
+                    <p class="enc-subtitle">A SPECIAL DAY FOR YOU</p>
+                </div>
+
+                <!-- Youth Space Badge -->
+                <div class="badge-youth-space">
+                    Youth Space
+                </div>
+
+                <!-- Main Typography -->
+                <div class="poster-title-wrapper">
+                    <h2 class="poster-dowe">Today</h2>
+                    <h1 class="poster-fallinlove">is all about you</h1>
+                </div>
+
+                <!-- Banner -->
+                <div class="poster-banner-wrapper">
+                    <div class="poster-banner">
+                        <div class="banner-item">Sat, 15 August</div>
+                        <div class="banner-div"></div>
+                        <div class="banner-item">22nd</div>
+                        <div class="banner-div"></div>
+                        <div class="banner-item text-left">
+                            <strong>FROM SOMEONE WHO LOVES YOU</strong>
+                            <span>Open For one special For You</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Details -->
+                <div class="poster-hanging-tag">
+                    OPEN<br>FOR<br>YOU
+                </div>
+
+                <div class="poster-envelope-icon">
+                    <svg viewBox="0 0 100 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="10" width="90" height="55" fill="#FDF6E3" stroke="#5C1920" stroke-width="4" />
+                        <path d="M5 10 L50 40 L95 10" fill="#E8DEC4" stroke="#5C1920" stroke-width="4" />
+                        <circle cx="50" cy="40" r="6" fill="#A72424" stroke="#5C1920" stroke-width="2" />
+                    </svg>
+                </div>
+
+                <!-- Action Button -->
+                <button class="btn-poster-action" onclick="navigateTo('sec-envelope')">Buka Kejutan</button>
+            </div>
+        </section>
+
+        <!-- Section 2: Envelope -->
+        <section id="sec-envelope" class="section flex-center hidden">
+            <!-- Background Huge Text -->
+            <div class="huge-bg-text">
+                <div class="huge-bg-row">Happy</div>
+                <div class="huge-bg-row bottom-row">Birthday</div>
+            </div>
+
+
+            <div class="envelope-wrapper">
+                <div class="envelope env-red" id="envelope" onclick="openEnvelope()">
+                    <div class="flap flap-red"></div>
+                    <div class="pocket pocket-red"></div>
+                    <div class="letter-preview letter-preview-red">
+                        <div class="letter-preview-content">
+                            <h3 class="preview-title">Dear <span class="val-text">You.</span></h3>
+                            <p class="preview-p">I hope this finds you well...</p>
+                            <p class="preview-p-small">...Your special day is here... and I just wanted to put this out
+                                there early. No pressure, just a little heads-up that I'd really love to celebrate it
+                                with you.</p>
+                            <p class="preview-highlight">Let's see where it goes</p>
+                        </div>
+                    </div>
+
+                    <!-- Wax seal and string -->
+                    <div class="wax-seal wax-seal-red">
+                        <i data-lucide="heart" class="seal-icon"></i>
+                    </div>
+                    <!-- Strings -->
+                    <div class="env-string string-left"></div>
+                    <div class="env-string string-right"></div>
+                </div>
+
+                <div class="flex flex-row justify-center gap-4 mt-8" id="btn-envelope-container"
+                    style="position: relative; z-index: 20;">
+                    <button class="btn-outline env-btn-outline" onclick="navigateTo('sec-cover')">Kembali</button>
+                    <button class="btn-primary env-btn-primary" onclick="openEnvelope()" id="btn-open-envelope">Open
+                        Letter</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Letter (My Dearest) -->
+        <section id="sec-letter" class="section flex-center hidden">
+            <div class="dearest-card">
+                <div class="dearest-left">
+                    <div class="dearest-ticket">
+                        <div class="scallop-top"></div>
+                        <div class="scallop-bottom"></div>
+                        <h3 class="script-font dearest-title">happy birthday...</h3>
+                        <div class="serif-font dearest-text letter-content" id="letter-content">
+                            <!-- Content will be injected by js -->
+                        </div>
+                        <div class="flex justify-between mt-6 dearest-buttons">
+                            <button class="btn-outline letter-back opacity-50 cursor-not-allowed">Back</button>
+                            <button class="btn-primary letter-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dearest-right">
+                    <div class="dearest-glow"></div>
+                    <div class="dearest-photo-frame">
+                        <img src="assets/placeholder-photo.jpg" alt="Us" id="letter-polaroid-img">
+                        <span class="handwriting-font frame-tag">just us</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: My Love (Journey) -->
+        <section id="sec-journey" class="section flex-center hidden">
+            <div class="card card-tall paper-texture floral-border" style="position: relative; padding-left: 3rem;">
+                <div class="spiral-bind"></div>
+                <div class="deco-tag" style="top: -20px; right: 20px; transform: rotate(15deg) scale(0.8);"></div>
+                <div class="washi-tape" style="top: -10px; left: 50%; transform: rotate(-2deg);"></div>
+                <div class="deco-heart" style="bottom: -15px; right: -15px; transform: rotate(15deg);"></div>
+                <div class="deco-flower" style="top: -25px; left: -25px; transform: scale(0.9) rotate(-10deg);"></div>
+                <h3 class="script-font text-primary text-4xl text-center mb-6">Our Journey</h3>
+                <div class="serif-font text-dark leading-relaxed journey-text scrollable-content">
+                    <p class="mb-4">halloooo, aneh rasanya pas awal kita kenal ada sesuatu yang berbeda.
+                        Setiap percakapan, setiap cerita, dan setiap momen yang kita jalani semoga menjadi perjalanan
+                        yang tepat.</p>
+                    <p class="mb-4">Perjalanan kita mungkin tidak selalu mulus, tapi satu hal yang pasti: aku sangat
+                        bersyukur bisa melewatinya bersamamu. Terima kasih karena selalu ada, mengajarkan aku arti
+                        kesabaran, dan suka duka.</p>
+                    <p class="mb-4">Hari ini, besok, dan seterusnya, aku selalu ingin melihat kamu mencapai apapun yang
+                        telah kamu mimpikan ya.
+                        Selamat ulang tahun sayang.</p>
+                </div>
+                <div class="flex flex-row justify-center gap-4 mt-6">
+                    <button class="btn-outline" onclick="navigateTo('sec-letter')">Kembali</button>
+                    <button class="btn-primary" onclick="navigateTo('sec-menu')">Let's see more</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section 5: Menu 4 Objects -->
+        <section id="sec-menu" class="section flex-center hidden">
+            <div class="menu-container" style="width: 100%; max-width: 800px; padding: 20px;">
+                <h3 class="script-font text-cream text-center mb-2"
+                    style="font-size: 4.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">For You...</h3>
+                <p class="handwriting-font text-cream text-2xl text-center mb-10" style="opacity: 0.9;">Pilih kotak mana
+                    saja yang mau kamu buka</p>
+
+                <div class="features-grid">
+                    <!-- Memories -->
+                    <div class="feature-square" onclick="openSubmenu('sec-gallery')">
+                        <div class="washi-tape" style="top: -10px; right: -10px; transform: rotate(15deg);"></div>
+                        <div class="feat-icon-wrapper">
+                            <i data-lucide="image" class="feat-icon"></i>
+                        </div>
+                        <span class="feat-title serif-font">Memories</span>
+                    </div>
+
+                    <!-- List Song -->
+                    <div class="feature-square" onclick="openSubmenu('sec-music')">
+                        <div class="deco-star" style="top: -10px; left: -10px; transform: scale(1.2);"></div>
+                        <div class="feat-icon-wrapper">
+                            <i data-lucide="music" class="feat-icon"></i>
+                        </div>
+                        <span class="feat-title serif-font">List Song</span>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="feature-square" onclick="openSubmenu('sec-calendar')">
+                        <div class="deco-cherry" style="bottom: -20px; right: -20px; transform: scale(0.7);"></div>
+                        <div class="feat-icon-wrapper">
+                            <i data-lucide="calendar-heart" class="feat-icon"></i>
+                        </div>
+                        <span class="feat-title serif-font">Calendar</span>
+                    </div>
+
+                    <!-- Wishes -->
+                    <div class="feature-square" onclick="openSubmenu('sec-wishes')">
+                        <div class="deco-flower"
+                            style="top: -20px; left: 50%; margin-left: -35px; transform: scale(0.7);"></div>
+                        <div class="feat-icon-wrapper">
+                            <i data-lucide="sparkles" class="feat-icon"></i>
+                        </div>
+                        <span class="feat-title serif-font">Wishes</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-row justify-center mt-10">
+                    <button class="btn-outline"
+                        style="color: #F5EFE6; border-color: #F5EFE6; padding: 10px 30px; font-size: 1.1rem; background: rgba(0,0,0,0.1);"
+                        onclick="navigateTo('sec-journey')">Kembali</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Music Player (Playlist) -->
+        <section id="sec-music" class="section flex-center hidden">
+            <div class="card paper-texture playlist-card relative scrollable-content">
+                <button class="btn-close" onclick="closeSubmenu()"><i data-lucide="x"></i></button>
+                <h3 class="script-font playlist-title text-center">Playlist</h3>
+                <div class="playlist-grid" id="playlist-grid">
+                    <!-- Song cards injected by js -->
+                </div>
+                <div class="flex flex-row justify-center mt-6">
+                    <button class="btn-outline w-full" onclick="closeSubmenu()">Kembali</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6b: Wishes -->
+        <section id="sec-wishes" class="section flex-center hidden">
+            <div class="presentation-wrapper">
+                <div class="presentation-slide">
+                    <button class="btn-close"
+                        style="position:absolute; top: 10px; right: 10px; z-index: 50; background: rgba(255,255,255,0.5); border: none; border-radius: 50%; padding: 8px; cursor: pointer; color: #4A1515;"
+                        onclick="closeSubmenu()"><i data-lucide="x"></i></button>
+
+                    <div class="slide-left">
+                        <div class="stars-bg"></div>
+                        <div class="doily-container">
+                            <div class="doily-inner">
+                                <p class="handwriting-font doily-text-1">My Wishes</p>
+                                <br>
+                                <div class="doily-warning handwriting-font" style="font-size: 1.6cqw;">
+                                </div>
+                                <ul class="doily-list handwriting-font" style="margin-top: 1cqw; line-height: 1.6;">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="slide-right">
+                        <div class="years-container handwriting-font">
+                            <div class="year-item">2020</div>
+                            <div class="year-item">2021</div>
+                            <div class="year-item">2022</div>
+                            <div class="year-item">2023</div>
+                            <div class="year-item">2024</div>
+                            <div class="year-item">2025</div>
+                            <div class="year-item circled-year">
+                                2026
+                                <svg class="circle-svg" viewBox="0 0 150 50">
+                                    <path
+                                        d="M 22,25 C 24,10 125,5 130,25 C 135,45 15,48 18,25 M 18,25 C 18,12 135,12 135,25 C 135,38 25,38 25,25" />
+                                </svg>
+                            </div>
+                            <div class="year-item">2027</div>
+                            <div class="year-item">2028</div>
+                            <div class="year-item">2029</div>
+                            <div class="year-item">2030</div>
+                            <div class="year-item">2031</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contextual back button -->
+            <div class="flex flex-row justify-center mt-6 z-10 relative px-4" style="width: 100%; max-width: 800px;">
+                <button class="btn-outline w-full bg-white opacity-90" onclick="closeSubmenu()">Kembali</button>
+            </div>
+        </section>
+
+        <!-- Section 7: Calendar -->
+        <section id="sec-calendar" class="section flex-center hidden">
+            <div class="calendar-scene">
+                <!-- Notebook paper backdrop -->
+                <div class="calendar-note-paper card paper-texture text-center">
+                    <h3 class="script-font text-primary calendar-heading">On this day...</h3>
+                    <p class="handwriting-font calendar-subtitle" id="cal-subtitle">My favorite person was born</p>
+                </div>
+
+                <!-- Scrapbook decorations -->
+                <div class="deco-cherry calendar-deco-cherry"></div>
+                <div class="deco-flower calendar-deco-flower"></div>
+
+                <!-- Full month calendar card -->
+                <div class="full-calendar">
+                    <div class="full-calendar-header">
+                        <span class="full-calendar-month" id="cal-month">August</span>
+                        <span class="full-calendar-year" id="cal-year">2026</span>
+                    </div>
+                    <div class="full-calendar-daynames">
+                        <span class="cal-sunday">Sun</span><span>Mon</span>
+                        <spa>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                    </div>
+                    <div class="full-calendar-grid" id="cal-grid">
+                        <!-- Days injected by js -->
+                    </div>
+                </div>
+
+                <p class="handwriting-font calendar-message" id="cal-message"></p>
+            </div>
+
+            <div class="flex flex-row justify-center gap-4 mt-8">
+                <button class="btn-primary" onclick="closeSubmenu()">Kembali</button>
+                <button class="btn-primary" onclick="navigateTo('sec-cover')">Back to Start</button>
+            </div>
+        </section>
+
+        <!-- Section 8: Gallery -->
+        <section id="sec-gallery" class="section flex-center hidden">
+            <div class="card paper-texture card-large relative h-90vh scrollable-content">
+                <div class="washi-tape" style="top: -10px; left: 20%; transform: rotate(-3deg);"></div>
+                <div class="deco-flower" style="bottom: -10px; left: -10px; transform: rotate(15deg);"></div>
+                <div class="deco-heart" style="top: 20px; right: 50px; transform: rotate(5deg) scale(0.8);"></div>
+                <button class="btn-close sticky-close" onclick="closeSubmenu()"><i data-lucide="x"></i></button>
+                <h3 class="script-font text-primary text-4xl text-center mb-6 mt-4">Coming soon</h3>
+                <div class="gallery-grid" id="gallery-container">
+                    <!-- Photos will be injected here by JS -->
+                </div>
+                <div class="flex flex-row justify-center mt-8">
+                    <button class="btn-outline px-8" onclick="closeSubmenu()">Kembali ke Menu</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox for Gallery -->
+        <div id="lightbox" class="lightbox hidden" onclick="closeLightbox(event)">
+            <button class="lightbox-close"><i data-lucide="x"></i></button>
+            <img src="" alt="Enlarged memory" id="lightbox-img">
+            <p id="lightbox-caption" class="handwriting-font text-cream text-2xl mt-4"></p>
+        </div>
+
+    </div>
+
+    <!-- Initialization Scripts -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
